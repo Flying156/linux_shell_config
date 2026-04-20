@@ -1,0 +1,186 @@
+# 设置配置范例，开启编辑器的自动补全
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# 在命令之间插入空行
+add_newline = true
+
+format = '''
+(bold green)$shell $directory$all$character'''
+
+# 将提示符的“❯”替换为“➜”
+[character] # “character”是我们正在配置的组件
+success_symbol = "[➜](bold green)" # 设置“success_symbol” 字段为绿色加粗的“➜”
+
+# 禁用 package 组件，完全隐藏它的提示符
+[package]
+disabled = true
+
+# A continuation prompt that displays two filled in arrows
+continuation_prompt = "▶▶"
+
+# 显示文件夹路径
+[directory]
+format = "[ $path]($style)[$read_only]($read_only_style) "
+truncation_symbol = '…/'
+
+[shell]
+format = '[❮](bold yellow)[$indicator]($style)[❯](bold yellow)'
+powershell_indicator = 'pwsh'
+fish_indicator = 'fish'
+bash_indicator = 'bash'
+unknown_indicator = 'mystery shell'
+style = 'cyan bold'
+disabled = false
+
+[sudo]
+style = 'bold green'
+symbol = ' ‍  '
+disabled = false
+
+# A minimal left prompt
+# format = """$character"""
+
+# move the rest of the prompt to the right
+# right_format = """$all"""
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch(:$remote_branch)]($style) "
+style = "bold yellow"
+
+[git_status]
+conflicted = ' '
+ahead = '  '
+behind = ' '
+diverged = ' '
+up_to_date = '✓'
+untracked = ' '
+stashed = ' '
+modified = ' '
+staged = '[++\($count\)](green)'
+renamed = ' '
+deleted = ' '
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[meson]
+symbol = "  "
+
+[nim]
+symbol = "  "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
+[python]
+symbol = " "
+
+[erlang]
+symbol = "  "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "  "
+Gentoo = " "
+HardenedBSD = "  "
+Illumos = "  "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "  "
+openSUSE = " "
+OracleLinux = "  "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = "  "
+Solus = "  "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = "  "

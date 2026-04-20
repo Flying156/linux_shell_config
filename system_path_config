@@ -1,0 +1,47 @@
+# 系统个人环境变量配置
+export PATH="$PATH:/mnt/d/Programs/Microsoft VS Code/bin"
+export PATH="$PATH:/mnt/c/Windows"
+
+export PATH="$HOME/develop/flutter/bin:$PATH"
+# 加载插件
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# 启用 Zsh 补全
+zstyle ':completion:*' menu select
+autoload -Uz compinit && compinit
+
+# 自动加载历史搜索功能
+autoload -Uz history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+
+# 历史记录配置
+HISTFILE=$HOME/.zsh_history
+SAVEHIST=100000000
+HISTSIZE=100000000
+
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_SAVE_NO_DUPS
+
+bindkey "$terminfo[kcuu1]" history-beginning-search-backward-end
+bindkey "$terminfo[kcud1]" history-beginning-search-forward-end
+
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'

@@ -1,0 +1,45 @@
+# --- V2RayN Proxy Configuration for WSL (Final Version) ---
+
+# 1. 自动获取作为默认网关的主机 IP (推荐方法)
+export HOST_IP=$(ip route show | grep default | awk '{print $3}')
+
+# 2. 您的 V2RayN 代理参数
+PROXY_PORT="7897"
+
+
+# ===== Proxy ON =====
+proxy() {
+  export PROXY_URL="http://${HOST_IP}:${PROXY_PORT}"
+  export PROXYS_URL="http://${HOST_IP}:${PROXY_PORT}"
+
+  export http_proxy="${PROXY_URL}"
+  export https_proxy="${PROXYS_URL}"
+  export all_proxy="socks5://${HOST_IP}:${PROXY_PORT}"
+
+  # git
+  git config --global http.proxy "${PROXY_URL}"
+  git config --global https.proxy "${PROXYS_URL}"
+
+  # no proxy
+  export no_proxy="localhost,127.0.0.1,*.local,${HOST_IP}"
+
+  echo "✅ Proxy enabled via ${HOST_IP}:${PROXY_PORT}"
+}
+
+# ===== Proxy OFF =====
+unproxy() {
+  unset http_proxy
+  unset https_proxy
+  unset all_proxy
+  unset no_proxy
+
+  # git
+  git config --global --unset http.proxy
+  git config --global --unset https.proxy
+
+  echo "❌ Proxy disabled"
+}
+
+
+
+
