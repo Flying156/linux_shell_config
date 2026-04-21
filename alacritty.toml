@@ -1,0 +1,133 @@
+[colors]
+draw_bold_text_with_bright_colors = false
+
+[colors.bright]
+black = "#4d4d4d"
+blue = "#a277ff"
+cyan = "#61ffca"
+green = "#61ffca"
+magenta = "#a277ff"
+red = "#ff6767"
+white = "#edecee"
+yellow = "#ffca85"
+
+[colors.cursor]
+cursor = "#a277ff"
+
+[colors.normal]
+black = "#110f18"
+blue = "#a277ff"
+cyan = "#61ffca"
+green = "#61ffca"
+magenta = "#a277ff"
+red = "#ff6767"
+white = "#edecee"
+yellow = "#ffca85"
+
+[colors.primary]
+background = "#15141b"
+foreground = "#edecee"
+
+[colors.search.focused_match]
+background = "#9F7AF5"
+foreground = "#ffffff"
+
+[colors.search.matches]
+background = "#ffffff"
+foreground = "#000000"
+
+[colors.selection]
+background = "#29263c"
+text = "CellForeground"
+
+[cursor.style]
+shape = "Beam"
+
+[font]
+size = 13.0
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 8
+
+
+[general]
+live_config_reload = true
+
+[scrolling]
+history = 100000
+multiplier = 4
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = """,│`|:"' ()[]{}<>"""
+
+[window]
+decorations = "Transparent"
+dynamic_padding = true
+startup_mode = "Fullscreen"
+
+
+[keyboard]
+bindings = [
+    # 复制 (Cmd + C)
+    { key = "C", mods = "Command", action = "Copy" },
+
+    # 粘贴 (Cmd + V)
+    { key = "V", mods = "Command", action = "Paste" },
+
+    # 查找 (Cmd + F)
+    { key = "F", mods = "Command", action = "SearchForward" },
+
+    # 新建窗口 (Cmd + N)
+    { key = "N", mods = "Command", action = "CreateNewWindow" },
+
+    # 缩小字体 (Cmd + -)
+    { key = "Minus", mods = "Command", action = "DecreaseFontSize" },
+
+    # 放大字体 (Cmd + =)
+    { key = "Equals", mods = "Command", action = "IncreaseFontSize" },
+
+    # 恢复默认字体大小 (Cmd + 0)
+    { key = "Key0", mods = "Command", action = "ResetFontSize" },
+
+    # 切换全屏 (Cmd + Enter)
+    { key = "Return", mods = "Command", action = "ToggleSimpleFullscreen" },
+
+    # 切换到具体标签页 (Cmd + 1 ~ Cmd + 9)
+    { key = "Key1", mods = "Command", action = "SelectTab1" },
+    { key = "Key2", mods = "Command", action = "SelectTab2" },
+    { key = "Key3", mods = "Command", action = "SelectTab3" },
+    { key = "Key4", mods = "Command", action = "SelectTab4" },
+    { key = "Key5", mods = "Command", action = "SelectTab5" },
+    { key = "Key6", mods = "Command", action = "SelectTab6" },
+    { key = "Key7", mods = "Command", action = "SelectTab7" },
+    { key = "Key8", mods = "Command", action = "SelectTab8" },
+    { key = "Key9", mods = "Command", action = "SelectTab9" },
+
+    # 隐藏 Alacritty (Cmd + H)
+    { key = "H", mods = "Command", action = "Hide" },
+
+    # 隐藏其他应用 (Cmd + Option + H)
+    { key = "H", mods = "Command|Option", action = "HideOtherApplications" },
+]
