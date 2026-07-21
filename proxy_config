@@ -4,7 +4,7 @@
 export HOST_IP=$(ip route show | grep default | awk '{print $3}')
 
 # 2. 您的 V2RayN 代理参数
-PROXY_PORT="7897"
+PROXY_PORT="10808"
 
 
 # ===== Proxy ON =====

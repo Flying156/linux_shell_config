@@ -43,6 +43,6 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 alias t="tmux"
-alias ll='ls -alF'
+alias ll='lsd -al'
 alias la='ls -A'
 alias l='ls -CF'
